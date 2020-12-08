@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8">
+    <title>Application démo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/css/styles.css}" />
+</head>
+<body>
+   <div>
+       <h1>Gestion des clients</h1>
+       <h2>Liste des clients</h2>
+       <table border="1">
+           <tr>
+               <th>Identifiant</th>
+               <th>Nom</th>
+               <th>Prenom</th>
+           </tr>
+           <tr th:each ="client : ${listeToutClients}">
+               <th th:utext="${client.id}"></th>
+               <th th:utext="${client.nom}"></th>
+               <th th:utext="${client.prenom}"></th>
+           </tr>
+       </table>
+
+       <h2>Actions</h2>
+       <a th:href="@{/clientsAjout}">Ajouter un client</a>
+
+   </div>
+</body>
+</html>
